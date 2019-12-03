@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
+        <file>
+            <url>src/app/views/wf_requests/show.html.erb</url>
+            <bookmark id="2">
+                <name/>
+                <line>28</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>src/app/views/components_admin/_dynamic_characteristic_list_element.html.erb</url>
+            <bookmark id="1">
+                <name/>
+                <line>0</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/projectos/rails5_examples/ticket-loop/app/assets/javascripts/channels/ticket.coffee</file>
+            <file>file:/C:/projectos/rails5_examples/ticket-loop/config/initializers/create_tickets.rb</file>
+            <file>file:/C:/projectos/rails5_examples/ticket-loop/app/models/ticket.rb</file>
+            <file>file:/C:/projectos/rails5_examples/ticket-loop/app/assets/stylesheets/tickets.scss</file>
+            <file>file:/C:/projectos/rails5_examples/ticket-loop/app/controllers/tickets_controller.rb</file>
+            <file>file:/C:/projectos/rails5_examples/ticket-loop/app/channels/ticket_channel.rb</file>
+            <file>file:/C:/projectos/rails5_examples/ticket-loop/app/helpers/tickets_helper.rb</file>
+            <file>file:/C:/projectos/rails5_examples/ticket-loop/app/views/tickets/show.html.erb</file>
+        </group>
+    </open-files>
+</project-private>

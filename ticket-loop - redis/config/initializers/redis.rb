@@ -1,0 +1,1 @@
+$redis = Redis::Namespace.new("ticket_loop", :redis => Redis.new)

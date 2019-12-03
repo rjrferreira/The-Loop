@@ -1,0 +1,43 @@
+<style type="text/css">
+  .available {
+      background-color: #1aff1a;
+  }
+  .selected_owner {
+      background-color: #a6a6a6;
+  }
+  .selected_other {
+      background-color: #ff9999;
+  }
+  .unavailable {
+      background-color: #e60000;
+  }
+  .button {
+    border-radius: 50%;
+  }
+</style>
+
+<p><%=@user%></p>
+<button id="reserve-all">Reserve</button>
+</br>
+</br>
+<table>
+  <thead></thead>
+  <tbody>
+      <% (1..25).each do |row| %>
+      <tr>
+          <% (1..20).each do |column|  %>
+          <td>
+              <%ticket = TicketsHelper.ticket @tickets, "#{row}_#{column}" %>
+              <%state = TicketsHelper.state ticket, @user%>
+              <%disabled = TicketsHelper.disabled ticket, @user%>
+            <button <%=disabled%> class="token <%=state%> button" data-ticket-id="<%="#{row}_#{column}"%>"><%="#{row}_#{column}"%></button>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div id="messages"></div>
+<input id="owner" type="hidden" value="<%=@user%>"/>
+
