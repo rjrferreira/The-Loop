@@ -33,7 +33,7 @@ Please open a command line in the root folder, and run the following command:
 rails db:create db:migrate
 ```
 
-### Run project
+## Run project
 
 You need to have a local Redis server running in port 6379.
 

@@ -25,7 +25,7 @@ Please open a command line in the root folder (where the Gemfile file is located
 bundle install
 ```
 
-### Run project
+## Run project
 
 You need to have a local Redis server running in port 6379.
 
