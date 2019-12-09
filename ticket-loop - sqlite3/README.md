@@ -8,7 +8,7 @@ Prototype of an online ticket store (using sqlite3 database)
 ruby -v
 ```
 
-This project was developed over 2.4.1 ruby version.
+This project was developed over 2.4.1p111 ruby version.
 For more information please visit https://www.ruby-lang.org/en/news/2017/03/22/ruby-2-4-1-released/
 
 ```

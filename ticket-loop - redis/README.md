@@ -8,7 +8,7 @@ Prototype of an online ticket store (using redis database)
 ruby -v
 ```
 
-This project was developed over 2.4.1 ruby version.
+This project was developed over 2.4.1p111 ruby version.
 For more information please visit https://www.ruby-lang.org/en/news/2017/03/22/ruby-2-4-1-released/
 
 ```
@@ -27,7 +27,7 @@ bundle install
 
 ## Run project
 
-You need to have a local Redis server running in port 6379.
+You need to have a local Redis server running in port 6379. (For further information please visit: https://redis.io/topics/quickstart)
 
 Now you are ready to start your application. In the root folder run the following command:
 
