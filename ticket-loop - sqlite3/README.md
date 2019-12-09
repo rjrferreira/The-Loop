@@ -1,24 +1,56 @@
-# README
+# ticket-loop
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Prototype of an online ticket store (using sqlite3 database)
 
-Things you may want to cover:
+## Check your Ruby and Rails version
 
-* Ruby version
+```
+ruby -v
+```
 
-* System dependencies
+This project was developed over 2.4.1 ruby version.
+For more information please visit https://www.ruby-lang.org/en/news/2017/03/22/ruby-2-4-1-released/
 
-* Configuration
+```
+rails -v
+```
 
-* Database creation
+This project was developed over 5.1.7 rails version.
 
-* Database initialization
+## Install dependencies
 
-* How to run the test suite
+Please open a command line in the root folder (where the Gemfile file is located), and run the following command:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+bundle install
+```
 
-* Deployment instructions
+## Initialize the database
 
-* ...
+Please open a command line in the root folder, and run the following command:
+
+```
+rails db:create db:migrate
+```
+
+### Run project
+
+Then you need to have a local Redis server running in port 6379.
+
+Now you are ready to start your application. In the root folder run the following command:
+
+```
+rails s
+```
+
+For test this application please open the browser and write "http://127.0.0.1:3000/". 
+If you want to see the all mechanism working, open more than two browser windows (for example: new tabs).
+
+
+## Authors
+
+* **Rodrigo Ferreira** 
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
