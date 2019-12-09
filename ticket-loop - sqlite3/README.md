@@ -35,7 +35,7 @@ rails db:create db:migrate
 
 ### Run project
 
-Then you need to have a local Redis server running in port 6379.
+You need to have a local Redis server running in port 6379.
 
 Now you are ready to start your application. In the root folder run the following command:
 
