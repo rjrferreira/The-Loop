@@ -6,23 +6,24 @@ App.ticket = App.cable.subscriptions.create "TicketChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    if data["state"] == "SELECTED" 
-      if $("#owner").val() == data["owner"]
-        $('.token[data-ticket-id='+data["code"]+']').removeClass("available selected_other unavailable");
-        $('.token[data-ticket-id='+data["code"]+']').addClass("selected_owner");
-      else
-        $('.token[data-ticket-id='+data["code"]+']').removeClass("available selected_owner unavailable");
-        $('.token[data-ticket-id='+data["code"]+']').addClass("selected_other");
-        $('.token[data-ticket-id='+data["code"]+']').prop('disabled', true);
-    else if data["state"] == "AVAILABLE"
-      $('.token[data-ticket-id='+data["code"]+']').removeClass("selected_owner selected_other unavailable");
-      $('.token[data-ticket-id='+data["code"]+']').addClass("available");
-      $('.token[data-ticket-id='+data["code"]+']').prop('disabled', false);
-    else if data["state"] == "UNAVAILABLE"
-      $('.token[data-ticket-id='+data["code"]+']').removeClass("selected_owner selected_other available");
-      $('.token[data-ticket-id='+data["code"]+']').addClass("unavailable");
-      $('.token[data-ticket-id='+data["code"]+']').prop('disabled', true);
-
+    for token in data
+      console.log(token);
+      if token["state"] == "SELECTED" 
+        if $("#owner").val() == token["owner"]
+          $('.token[data-ticket-id='+token["code"]+']').removeClass("available selected_other unavailable");
+          $('.token[data-ticket-id='+token["code"]+']').addClass("selected_owner");
+        else
+          $('.token[data-ticket-id='+token["code"]+']').removeClass("available selected_owner unavailable");
+          $('.token[data-ticket-id='+token["code"]+']').addClass("selected_other");
+          $('.token[data-ticket-id='+token["code"]+']').prop('disabled', true);
+      else if token["state"] == "AVAILABLE"
+        $('.token[data-ticket-id='+token["code"]+']').removeClass("selected_owner selected_other unavailable");
+        $('.token[data-ticket-id='+token["code"]+']').addClass("available");
+        $('.token[data-ticket-id='+token["code"]+']').prop('disabled', false);
+      else if token["state"] == "UNAVAILABLE"
+        $('.token[data-ticket-id='+token["code"]+']').removeClass("selected_owner selected_other available");
+        $('.token[data-ticket-id='+token["code"]+']').addClass("unavailable");
+        $('.token[data-ticket-id='+token["code"]+']').prop('disabled', true);
     # Called when there's incoming data on the websocket for this channel
 
   update: (code,owner) ->

@@ -22,15 +22,17 @@ class TicketChannel < ApplicationCable::Channel
     
     ticket = $redis.get(data["code"]).split(":")
     
-    ActionCable.server.broadcast "ticket_channel", code: data["code"], owner: ticket[0], state: ticket[1]
+    ActionCable.server.broadcast "ticket_channel", [{code: data["code"], owner: ticket[0], state: ticket[1]}]
     
   end
   
   def reserve data
+    tickets = []
     data["data_tickets_ids"].each do |ticket_code|
       $redis.set(ticket_code, "#{data["owner"]}:UNAVAILABLE")
-      ActionCable.server.broadcast "ticket_channel", code: ticket_code, owner: data["owner"], state: "UNAVAILABLE"
+      tickets << {code: ticket_code, owner: data["owner"], state: "UNAVAILABLE"}
     end
+    ActionCable.server.broadcast "ticket_channel", tickets
   end
   
   def clear_cache 
