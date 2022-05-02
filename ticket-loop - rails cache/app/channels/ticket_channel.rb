@@ -5,9 +5,9 @@ class TicketChannel < ApplicationCable::Channel
 
   def unsubscribed
     # If i had authentication i knew the user name
-    # use Rails.cache.delete 
+    # use Rails.cache.delete
   end
-  
+
   def update data
     ticket = Rails.cache.read(data["code"])
     if ticket.nil?
@@ -19,7 +19,7 @@ class TicketChannel < ApplicationCable::Channel
     Rails.cache.write(data["code"], ticket)
     ActionCable.server.broadcast "ticket_channel", [{code: data["code"], owner: data["owner"], state: ticket.state}]
   end
-  
+
   def reserve data
     tickets = []
     data["data_tickets_ids"].each do |ticket_code|
@@ -30,8 +30,8 @@ class TicketChannel < ApplicationCable::Channel
       tickets << {code: ticket_code, owner: data["owner"], state: "UNAVAILABLE"}
     end
     ActionCable.server.broadcast "ticket_channel", tickets
-    
+
   end
-  
+
 end
 
