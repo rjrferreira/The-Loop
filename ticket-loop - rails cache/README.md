@@ -30,7 +30,7 @@ bundle install
 Please open a command line in the root folder, and run the following command:
 
 ```
-rails db:create db:migrate
+rails db:create db:migrate db:seed
 ```
 
 ## Run project
@@ -43,13 +43,13 @@ Now you are ready to start your application. In the root folder run the followin
 rails s
 ```
 
-For test this application please open the browser and write "http://127.0.0.1:3000/". 
+For test this application please open the browser and write "http://127.0.0.1:3000/".
 If you want to see the all mechanism working, open more than two browser windows (for example: new tabs).
 
 
 ## Authors
 
-* **Rodrigo Ferreira** 
+* **Rodrigo Ferreira**
 
 ## License
 
