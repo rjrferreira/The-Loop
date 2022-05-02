@@ -74,8 +74,10 @@ Now you are ready to start your application. In the root folder run the followin
 puma
 ```
 
+## Test on browser
+
 For test this application please open the browser and write "http://127.0.0.1:3000/".
-If you want to see the all mechanism working, open more than two browser windows (for example: new tabs).
+If you want to see the all mechanism working, open more than two browser windows (for example: a normal window and a incognito window, or simple use another browser).
 
 
 ## Authors
