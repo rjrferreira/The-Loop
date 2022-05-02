@@ -2,9 +2,15 @@
 
 Prototype of an online ticket store
 
-## Authors
+## Projects
 
-* **Rodrigo Ferreira** 
+- ticket-loop - rails cache
+- ticket-loop - redis (deprecated)
+- ticket-loop - sqlite3 (deprecated)
+
+## Author
+
+* **Rodrigo Ferreira**
 
 ## License
 
