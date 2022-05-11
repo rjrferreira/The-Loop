@@ -1,4 +1,4 @@
-App.ticket = App.cable.subscriptions.create "TicketChannel",
+App.ticket = App.cable.subscriptions.create {channel: "TicketChannel", user: document.querySelector('head').dataset.userId},
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -7,8 +7,7 @@ App.ticket = App.cable.subscriptions.create "TicketChannel",
 
   received: (data) ->
     for token in data
-      console.log(token);
-      if token["state"] == "SELECTED" 
+      if token["state"] == "SELECTED"
         if $("#owner").val() == token["owner"]
           $('.token[data-ticket-id='+token["code"]+']').removeClass("available selected_other unavailable");
           $('.token[data-ticket-id='+token["code"]+']').addClass("selected_owner");
@@ -29,7 +28,7 @@ App.ticket = App.cable.subscriptions.create "TicketChannel",
   update: (code,owner) ->
     @perform 'update', code: code, owner: owner
     # call method update in ticket_channel.rb
-  
+
   reserve: (owner, data_tickets_ids) ->
     @perform 'reserve', owner: owner, data_tickets_ids: data_tickets_ids
     # call method reserve in ticket_channel.rb

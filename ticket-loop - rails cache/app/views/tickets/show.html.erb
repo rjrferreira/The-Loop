@@ -1,3 +1,5 @@
+<%= content_for(:head_attributes) do %>data-user-id="<%= @user %>"<% end %>
+
 <style type="text/css">
   .available {
       background-color: #1aff1a;
@@ -38,6 +40,7 @@
   </tbody>
 </table>
 
+<body data-visit-id="<%= @user %>">
 <div id="messages"></div>
 <input id="owner" type="hidden" value="<%=@user%>"/>
 
